@@ -1,6 +1,13 @@
-alert("Bienvendos a GUCCI tienda de moda");
+alert("Bienvenidos a GUCCI tienda de moda");
 
-let eleccion = prompt("Elije que quieres comprar:\n1. Billetera GUCCI - 550USD \n2. Zapatillas GUCCI - 1700USD \n3. Zapatos GUCCI - 2200USD \n4. Cartera GUCCI - 3000USD ").toLocaleLowerCase();
+let eleccion = "";
+
+while (eleccion !== "1" && eleccion !== "billetera" && eleccion !== "2" && eleccion !== "zapatillas" && eleccion !== "3" && eleccion !== "zapatos" && eleccion !== "4" && eleccion !== "cartera" ){
+    eleccion = prompt("Elige qué quieres comprar:\n1. Billetera GUCCI - 550USD \n2. Zapatillas GUCCI - 1700USD \n3. Zapatos GUCCI - 2200USD \n4. Cartera GUCCI - 3000USD").toLocaleLowerCase();
+    if (eleccion !== "1" && eleccion !== "billetera" && eleccion !== "2" && eleccion !== "zapatillas" && eleccion !== "3" && eleccion !== "zapatos" && eleccion !== "4" && eleccion !== "cartera") {
+        alert("No disponemos de ese producto en la lista, por favor elija uno de la lista");
+    }
+}  
 
 let precioFinal = 0;
 
@@ -14,8 +21,6 @@ if (esMiembro =="sí" || esMiembro =="si") {
         precioFinal = 2200*0.9
     } else if (eleccion=="4"||eleccion=="cartera"){
         precioFinal = 3000*0.9
-    } else {
-        alert ("no disponemos de ese producto, por favor elija uno de la lista")
     }
 } else if (esMiembro=="no"){
     let noEsMiembro = prompt ("¿Quieres convertirte en miembro? Responde si o no").toLocaleLowerCase();
@@ -29,11 +34,18 @@ if (esMiembro =="sí" || esMiembro =="si") {
             precioFinal = 2200*0.85
         } else if (eleccion=="4"||eleccion=="cartera"){
             precioFinal = 3000*0.85
-        } else {
-            alert ("no disponemos de ese producto, por favor elija uno de la lista")
-        }
+        } 
     } else if (noEsMiembro=="no"){
         alert("¡Consideralo más tarde!")
+        if (eleccion=="1"||eleccion=="billetera"){
+            precioFinal = 550
+        } else if (eleccion=="2" || eleccion=="zapatillas"){
+            precioFinal= 1700
+        } else if (eleccion=="3" || eleccion=="zapatos"){
+            precioFinal = 2200
+        } else if (eleccion=="4"||eleccion=="cartera"){
+            precioFinal = 3000
+        } 
     } else {
         alert("Seleccione una respuesta valida")
     }
